@@ -1,6 +1,7 @@
+import "./globals.css";
+import { Header } from "@/components";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
 
 const pretendard = localFont({
   src: "./fonts/PretendardVariable.woff2",
@@ -10,8 +11,8 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "있갤 서포트",
-  description: "DC 인사이드 ITZY 마이너 갤러리 서포트 팀",
+  title: "MIDZY",
+  description: "ITZY를 믿는 MIDZY의 공간",
 };
 
 export default function RootLayout({
@@ -21,7 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={pretendard.className}>{children}</body>
+      <body className={pretendard.className}>
+        <Header />
+
+        <main className="container pt-14">{children}</main>
+      </body>
     </html>
   );
 }
