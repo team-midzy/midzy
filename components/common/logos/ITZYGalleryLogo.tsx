@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import clsx from "clsx";
 
 const ITZYGalleryLogo = ({ isDark = false }: LogoProps) => (
   <figure className="w-28">
@@ -6,7 +6,7 @@ const ITZYGalleryLogo = ({ isDark = false }: LogoProps) => (
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       viewBox="0 0 140 44"
-      className={clsx(isDark ? 'fill-white' : 'fill-black')}
+      className={clsx(isDark ? "fill-white" : "fill-black")}
     >
       <g>
         <g>

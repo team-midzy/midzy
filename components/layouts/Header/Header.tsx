@@ -1,5 +1,5 @@
-import { TeamMIDZYLogo } from '@/components/common';
-import Nav from '@/components/layouts/Nav/Nav';
+import { TeamMIDZYLogo } from "@/components/common";
+import Nav from "@/components/layouts/Nav/Nav";
 
 const Header = () => {
   return (
