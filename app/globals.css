@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply min-h-screen bg-gradient-to-t from-[#fefcfd] to-[#fde8eb];
+    @apply min-h-screen bg-gradient-to-t from-[#fde8eb] to-[#fefcfd];
     @apply scroll-smooth;
   }
 }
