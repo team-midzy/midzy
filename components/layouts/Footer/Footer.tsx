@@ -4,7 +4,7 @@ const Footer = () => {
   const email = "support@midzy.kr";
 
   return (
-    <footer className="container flex flex-wrap items-end justify-between py-6 text-xs font-light text-gray-600">
+    <footer className="container flex flex-wrap items-end justify-between py-6 text-xs font-light text-neutral-600">
       <section>
         <ITZYGalleryLogo />
 
@@ -15,8 +15,8 @@ const Footer = () => {
 
       <article className="mt-3">
         <p>
-          &copy; <time>2024</time> 있지 믿지 날자 (aka ITZY 갤러리 서포트 팀).
-          All rights reserved.
+          &copy; <time dateTime="2024">2024</time> 있지 믿지 날자 (aka ITZY
+          갤러리 서포트 팀). All rights reserved.
         </p>
       </article>
     </footer>
