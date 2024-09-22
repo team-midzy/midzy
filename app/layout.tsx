@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={pretendard.className}>
         <Header />
 
-        <main className="container">{children}</main>
+        <main className="container py-6">{children}</main>
 
         <hr />
         <Footer />
