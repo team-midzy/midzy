@@ -21,4 +21,4 @@ const config = {
   tailwindFunctions: ["clsx"],
 };
 
-export default config;
+module.exports = config;
