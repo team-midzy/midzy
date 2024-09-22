@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Footer, Header } from "@/components";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
