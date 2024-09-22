@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Header } from "@/components";
+import { Footer, Header } from "@/components";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
@@ -11,8 +11,8 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MIDZY",
-  description: "ITZY를 믿는 MIDZY의 공간",
+  title: "TEAM MIDZY",
+  description: "ITZY, MIDZY, 날자!",
 };
 
 export default function RootLayout({
@@ -26,6 +26,9 @@ export default function RootLayout({
         <Header />
 
         <main className="container">{children}</main>
+
+        <hr />
+        <Footer />
       </body>
     </html>
   );
