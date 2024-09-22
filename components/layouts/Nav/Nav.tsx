@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui";
 import Link from "next/link";
-import React from "react";
 
 const Pointer = () => (
   <div className="absolute -bottom-1 flex w-full justify-center">
