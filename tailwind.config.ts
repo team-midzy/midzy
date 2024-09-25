@@ -1,5 +1,6 @@
-import colors from "./config/colors";
-import { Config } from "tailwindcss";
+import customColors from "./config/colors";
+import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 const config: Config = {
   content: [
@@ -10,9 +11,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        itzy: colors.itzy,
-        gold: colors.gold,
-        primary: colors.gold,
+        ...customColors,
+        primary: customColors.gold,
       },
     },
     container: {

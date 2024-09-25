@@ -1,5 +1,6 @@
 const colors = {
   itzy: {
+    50: "#FEE2E5",
     100: "#FED9E0",
     200: "#FDB4C9",
     300: "#FB8EB8",
@@ -11,6 +12,7 @@ const colors = {
     900: "#750C73",
   },
   gold: {
+    50: "#FEFBF0",
     100: "#FDF9EB",
     200: "#FCF3D7",
     300: "#F7E7C1",
