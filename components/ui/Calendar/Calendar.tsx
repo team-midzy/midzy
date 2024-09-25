@@ -31,107 +31,103 @@ const Calendar = () => {
   const cellStyle = "w-28 px-2 py-1";
 
   return (
-    <>
-      <p className="px-5 py-1 text-left text-lg font-bold">
+    <table>
+      <caption className="px-2 py-1 text-left font-bold">
         <time dateTime={now.format("YYYY-MM")}>{now.format("YYYY.MM")}</time>
-      </p>
+      </caption>
 
-      <div className="overflow-hidden rounded-xl px-3 py-1.5">
-        <table>
-          <thead>
-            <tr className="border-b border-slate-200">
-              {weekdays.map((day, index) => (
-                <th
-                  key={day}
-                  scope="col"
-                  className={clsx(
-                    "text-left font-bold",
-                    cellStyle,
-                    index === 0 && "text-red-500"
-                  )}
-                >
-                  {day}
-                </th>
-              ))}
-            </tr>
-          </thead>
+      <thead className="text-sm">
+        <tr className="border-b border-slate-200">
+          {weekdays.map((day, index) => (
+            <th
+              key={day}
+              scope="col"
+              className={clsx(
+                "text-left font-bold",
+                cellStyle,
+                index === 0 && "text-red-500"
+              )}
+            >
+              {day}
+            </th>
+          ))}
+        </tr>
+      </thead>
 
-          <tbody>
-            {weeks.map((week, weekIndex) => (
-              <tr key={weekIndex} className="border-b border-slate-200">
-                {week.map((day, dayIndex) => (
-                  <td
-                    key={dayIndex}
+      <tbody className="text-sm">
+        {weeks.map((week, weekIndex) => (
+          <tr key={weekIndex} className="border-b border-slate-200">
+            {week.map((day, dayIndex) => (
+              <td
+                key={dayIndex}
+                className={clsx(
+                  "h-20 align-baseline",
+                  cellStyle,
+                  !day && "invisible",
+                  dayIndex === 0 && "text-red-500"
+                )}
+              >
+                <div className="flex h-full flex-col justify-between pb-2">
+                  <time
+                    dateTime={
+                      day
+                        ? dayjs().set("date", day).format("YYYY-MM-DD")
+                        : undefined
+                    }
                     className={clsx(
-                      "h-20 align-baseline",
-                      cellStyle,
-                      !day && "invisible",
-                      dayIndex === 0 && "text-red-500"
+                      day &&
+                        dayjs().set("date", day).isSame(now, "date") &&
+                        "font-bold text-primary-500"
                     )}
                   >
-                    <div className="flex h-full flex-col justify-between pb-2">
-                      <time
-                        dateTime={
-                          day
-                            ? dayjs().set("date", day).format("YYYY-MM-DD")
-                            : undefined
-                        }
-                        className={clsx(
-                          day &&
-                            dayjs().set("date", day).isSame(now, "date") &&
-                            "font-bold text-primary-500"
-                        )}
-                      >
-                        {day}
-                      </time>
+                    {day}
+                  </time>
 
-                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                        <ITZY className="w-5" />
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <ITZY className="w-5" />
 
-                        <Image
-                          src="/images/kkengee.webp"
-                          alt="예지"
-                          width={20}
-                          height={20}
-                        />
+                    <Image
+                      src="/images/kkengee.webp"
+                      alt="예지"
+                      width={20}
+                      height={20}
+                    />
 
-                        <Image
-                          src="/images/li-li.webp"
-                          alt="리아"
-                          width={20}
-                          height={20}
-                        />
+                    <Image
+                      src="/images/li-li.webp"
+                      alt="리아"
+                      width={20}
+                      height={20}
+                    />
 
-                        <Image
-                          src="/images/ryujji.webp"
-                          alt="류진"
-                          width={20}
-                          height={20}
-                        />
+                    <Image
+                      src="/images/ryujji.webp"
+                      alt="류진"
+                      width={20}
+                      height={20}
+                    />
 
-                        <Image
-                          src="/images/ryeowoo.webp"
-                          alt="채령"
-                          width={20}
-                          height={20}
-                        />
+                    <Image
+                      src="/images/ryeowoo.webp"
+                      alt="채령"
+                      width={20}
+                      height={20}
+                    />
 
-                        <Image
-                          src="/images/naong.webp"
-                          alt="유나"
-                          width={20}
-                          height={20}
-                        />
-                      </div>
-                    </div>
-                  </td>
-                ))}
-              </tr>
+                    <Image
+                      src="/images/naong.webp"
+                      alt="유나"
+                      width={20}
+                      height={20}
+                    />
+                  </div>
+                </div>
+              </td>
             ))}
-          </tbody>
-        </table>
-      </div>
-    </>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };
 
