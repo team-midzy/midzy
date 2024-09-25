@@ -37,6 +37,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.3.5"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["clsx", "npm:2.1.1"],\
+          ["dayjs", "npm:1.11.13"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-next", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:14.2.7"],\
           ["eslint-config-prettier", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:9.1.0"],\
@@ -1491,6 +1492,15 @@ const RAW_RUNTIME_STATE =
           ["call-bind", "npm:1.0.7"],\
           ["es-errors", "npm:1.3.0"],\
           ["is-data-view", "npm:1.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["dayjs", [\
+      ["npm:1.11.13", {\
+        "packageLocation": "../.yarn/berry/cache/dayjs-npm-1.11.13-d478bb9479-10c0.zip/node_modules/dayjs/",\
+        "packageDependencies": [\
+          ["dayjs", "npm:1.11.13"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3539,6 +3549,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.3.5"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["clsx", "npm:2.1.1"],\
+          ["dayjs", "npm:1.11.13"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-next", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:14.2.7"],\
           ["eslint-config-prettier", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:9.1.0"],\
