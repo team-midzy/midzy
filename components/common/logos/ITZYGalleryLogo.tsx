@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
-const ITZYGalleryLogo = ({ isDark = false }: LogoProps) => (
-  <figure className="w-28">
+const ITZYGalleryLogo = ({ isDark = false, className = "w-28" }: LogoProps) => (
+  <figure className={className}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
