@@ -1,6 +1,11 @@
 import clsx from "clsx";
 
-const Button = ({ variant = "plain", children, className }: ButtonProps) => {
+const Button = ({
+  variant = "plain",
+  children,
+  className,
+  onClick,
+}: ButtonProps) => {
   const commonStyle = "transition duration-300 ease-in-out font-semibold";
   const plainStyle = "";
   const textStyle = "hover:text-itzy-500";
@@ -11,7 +16,10 @@ const Button = ({ variant = "plain", children, className }: ButtonProps) => {
   };
 
   return (
-    <button className={clsx(commonStyle, variantStyles[variant], className)}>
+    <button
+      className={clsx(commonStyle, variantStyles[variant], className)}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

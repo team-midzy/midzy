@@ -1,4 +1,4 @@
 interface ListItemProps {
-  children: React.ReactNode;
-  className?: string;
+  readonly children: React.ReactNode;
+  readonly className?: string;
 }

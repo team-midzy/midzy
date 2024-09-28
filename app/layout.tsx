@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Footer, Header } from "@/components";
+import { Footer, Header, NavDrawer } from "@/components";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import dayjs from "dayjs";
 import "dayjs/locale/ko";
@@ -20,15 +20,16 @@ export const metadata: Metadata = {
   description: "ITZY, MIDZY, 날자!",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="ko">
       <body className={pretendard.className}>
         <Header />
+        <NavDrawer />
 
         <main className="container py-6">{children}</main>
 
@@ -36,4 +37,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
