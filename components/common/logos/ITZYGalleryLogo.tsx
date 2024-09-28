@@ -1,12 +1,12 @@
-import clsx from "clsx";
+import { twJoin, twMerge } from "tailwind-merge";
 
-const ITZYGalleryLogo = ({ isDark = false, className = "w-28" }: LogoProps) => (
-  <figure className={className}>
+const ITZYGalleryLogo = ({ isDark = false, className }: LogoProps) => (
+  <figure className={twMerge("w-28", className)}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       viewBox="0 0 140 44"
-      className={clsx(isDark ? "fill-white" : "fill-black")}
+      className={twJoin(isDark ? "fill-white" : "fill-black")}
     >
       <g>
         <g>

@@ -36,7 +36,6 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:20.16.2"],\
           ["@types/react", "npm:18.3.5"],\
           ["@types/react-dom", "npm:18.3.0"],\
-          ["clsx", "npm:2.1.1"],\
           ["dayjs", "npm:1.11.13"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-next", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:14.2.7"],\
@@ -47,6 +46,7 @@ const RAW_RUNTIME_STATE =
           ["prettier-plugin-tailwindcss", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:0.6.6"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:18.3.1"],\
+          ["tailwind-merge", "npm:2.5.2"],\
           ["tailwindcss", "npm:3.4.10"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
           ["zustand", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:5.0.0-rc.2"]\
@@ -1357,15 +1357,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../.yarn/berry/cache/client-only-npm-0.0.1-07d3e9505c-10c0.zip/node_modules/client-only/",\
         "packageDependencies": [\
           ["client-only", "npm:0.0.1"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["clsx", [\
-      ["npm:2.1.1", {\
-        "packageLocation": "../.yarn/berry/cache/clsx-npm-2.1.1-96125b98be-10c0.zip/node_modules/clsx/",\
-        "packageDependencies": [\
-          ["clsx", "npm:2.1.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3549,7 +3540,6 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:20.16.2"],\
           ["@types/react", "npm:18.3.5"],\
           ["@types/react-dom", "npm:18.3.0"],\
-          ["clsx", "npm:2.1.1"],\
           ["dayjs", "npm:1.11.13"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-next", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:14.2.7"],\
@@ -3560,6 +3550,7 @@ const RAW_RUNTIME_STATE =
           ["prettier-plugin-tailwindcss", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:0.6.6"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:18.3.1"],\
+          ["tailwind-merge", "npm:2.5.2"],\
           ["tailwindcss", "npm:3.4.10"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
           ["zustand", "virtual:6216826d188dc13caf6d262fdf2c3ca59644d0f59e9bea13304d2baca792e6ffdf3370c83849efd7596beab18cdeb290ff81849ea2f63e8aa0ca9d2e0866a1b2#npm:5.0.0-rc.2"]\
@@ -5029,6 +5020,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../.yarn/berry/cache/supports-preserve-symlinks-flag-npm-1.0.0-f17c4d0028-10c0.zip/node_modules/supports-preserve-symlinks-flag/",\
         "packageDependencies": [\
           ["supports-preserve-symlinks-flag", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["tailwind-merge", [\
+      ["npm:2.5.2", {\
+        "packageLocation": "../.yarn/berry/cache/tailwind-merge-npm-2.5.2-dc41943d9c-10c0.zip/node_modules/tailwind-merge/",\
+        "packageDependencies": [\
+          ["tailwind-merge", "npm:2.5.2"]\
         ],\
         "linkType": "HARD"\
       }]\

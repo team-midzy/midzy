@@ -1,15 +1,12 @@
-import clsx from "clsx";
+import { twJoin, twMerge } from "tailwind-merge";
 
-const TeamMIDZYLogo = ({
-  isDark = false,
-  className = "w-[5.125rem]",
-}: LogoProps) => (
-  <figure className={className}>
+const TeamMIDZYLogo = ({ isDark = false, className }: LogoProps) => (
+  <figure className={twMerge("w-[5.125rem]", className)}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       viewBox="0 0 104 44"
-      className={clsx(isDark ? "fill-white" : "fill-black")}
+      className={twJoin(isDark ? "fill-white" : "fill-black")}
     >
       <g>
         <g>

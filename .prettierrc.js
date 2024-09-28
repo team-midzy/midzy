@@ -18,7 +18,7 @@ const config = {
     require.resolve("@trivago/prettier-plugin-sort-imports"),
     require.resolve("prettier-plugin-tailwindcss"),
   ],
-  tailwindFunctions: ["clsx"],
+  tailwindFunctions: ["twJoin", "twMerge"],
 };
 
 module.exports = config;

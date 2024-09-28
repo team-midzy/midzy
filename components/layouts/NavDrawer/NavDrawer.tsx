@@ -2,8 +2,8 @@
 
 import { List, ListItem, TextLink } from "@/components/ui";
 import useNavDrawerStore from "@/stores/useNavDrawerStore";
-import clsx from "clsx";
 import { useEffect } from "react";
+import { twJoin } from "tailwind-merge";
 
 const Drawer = () => {
   const { isOpen, closeDrawer } = useNavDrawerStore();
@@ -24,7 +24,7 @@ const Drawer = () => {
   return (
     <>
       <div
-        className={clsx(
+        className={twJoin(
           "fixed inset-0 bg-slate-50 bg-opacity-10 backdrop-blur-sm",
           !isOpen && "hidden"
         )}
@@ -32,7 +32,7 @@ const Drawer = () => {
       />
 
       <div
-        className={clsx(
+        className={twJoin(
           "fixed left-0 top-14 h-[calc(100%-56px)] w-64 transform bg-slate-50 bg-opacity-30 p-2 shadow-xl backdrop-blur-md transition-transform duration-300 ease-in-out",
           isOpen && "sm:-translate-x-full",
           !isOpen && "-translate-x-full"

@@ -31,7 +31,9 @@ const RootLayout = ({
         <Header />
         <NavDrawer />
 
-        <main className="container py-6">{children}</main>
+        <main className="container grid grid-cols-12 gap-4 py-6">
+          {children}
+        </main>
 
         <Footer />
       </body>

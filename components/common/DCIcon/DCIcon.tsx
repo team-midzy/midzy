@@ -1,11 +1,11 @@
-import clsx from "clsx";
+import { twJoin } from "tailwind-merge";
 
 const DCIcon = ({ size, className }: DCIconProps) => (
   <svg
     aria-hidden="true"
     focusable="false"
     fill="#3B468F"
-    className={clsx(
+    className={twJoin(
       "svg-inline--fa",
       size === "sm" && "fa-sm",
       size === "lg" && "fa-lg",

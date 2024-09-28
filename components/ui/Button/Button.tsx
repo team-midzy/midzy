@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 const Button = ({
   variant = "plain",
@@ -17,7 +17,7 @@ const Button = ({
 
   return (
     <button
-      className={clsx(commonStyle, variantStyles[variant], className)}
+      className={twMerge(commonStyle, variantStyles[variant], className)}
       onClick={onClick}
     >
       {children}

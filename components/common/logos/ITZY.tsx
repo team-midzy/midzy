@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { twJoin } from "tailwind-merge";
 
 const ITZY = ({ isDark = false, className }: LogoProps) => (
   <figure className={className}>
@@ -6,7 +6,7 @@ const ITZY = ({ isDark = false, className }: LogoProps) => (
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       viewBox="0 0 195.60141 168.72858"
-      className={clsx(isDark ? "fill-white" : "fill-black")}
+      className={twJoin(isDark ? "fill-white" : "fill-black")}
     >
       <path
         d="m187.754-29.195-24.84 1.7 3.217 39.67 21.623-19.492z"

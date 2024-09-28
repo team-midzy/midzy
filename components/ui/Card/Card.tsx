@@ -1,12 +1,19 @@
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
-const Card = ({ children, className }: CardProps) => {
+const Card = ({
+  children,
+  className,
+  containerTag: Container = "article",
+}: CardProps) => {
   return (
-    <section
-      className={clsx("rounded-2xl bg-white bg-opacity-50 p-5", className)}
+    <Container
+      className={twMerge(
+        "rounded-2xl bg-white bg-opacity-50 px-5 py-4",
+        className
+      )}
     >
       {children}
-    </section>
+    </Container>
   );
 };
 
