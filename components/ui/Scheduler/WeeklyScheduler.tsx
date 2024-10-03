@@ -1,101 +1,77 @@
 "use client";
 
+import Button from "@/components/ui/Button/Button";
+import IconButton from "@/components/ui/Button/IconButton";
 import Card from "@/components/ui/Card/Card";
 import List from "@/components/ui/List/List";
 import ListItem from "@/components/ui/List/ListItem";
 import Twinzy from "@/components/ui/Members/Twinzy";
+import Countdown from "@/components/ui/Scheduler/Countdown";
 import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import dayjs from "dayjs";
-import { useState } from "react";
+import dayjs, { type Dayjs } from "dayjs";
+import { useEffect, useState } from "react";
 import { twJoin } from "tailwind-merge";
 
-const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
-  const [currentDate, setCurrentDate] = useState(dayjs());
+const weeklySchedulesMockup: Schedule[] = [
+  {
+    id: 526,
+    dateTime: "2024-09-29 17:26",
+    member: "yeji",
+    schedule: "예지시",
+  },
+  {
+    id: 721,
+    dateTime: "2024-09-30 19:21",
+    member: "lia",
+    schedule: "리아시",
+  },
+  {
+    id: 417,
+    dateTime: "2024-10-01 16:17",
+    member: "ryujin",
+    schedule: "류진시",
+  },
+  {
+    id: 605,
+    dateTime: "2024-10-02 18:05",
+    member: "chaeryeong",
+    schedule: "채령시",
+  },
+  {
+    id: 1209,
+    dateTime: "2024-10-03 12:09",
+    member: "yuna",
+    schedule: "유나시",
+  },
+  {
+    id: 212,
+    dateTime: "2024-10-04 02:12",
+    member: "itzy",
+    schedule: "있지시",
+  },
+  {
+    id: 708,
+    dateTime: "2024-10-04 19:08",
+    member: "itzy",
+    schedule: "믿지시",
+  },
+];
 
-  // TODO: 현재 날짜 기준으로 주간 스케줄 페칭
-  const weeklySchedulesMockup: Schedule[] = [
-    {
-      date: "2024-09-29",
-      schedules: [
-        {
-          id: 526,
-          member: "yeji",
-          time: "17:26",
-          schedule: "예지시",
-        },
-      ],
-    },
-    {
-      date: "2024-09-30",
-      schedules: [
-        {
-          id: 721,
-          member: "lia",
-          time: "19:21",
-          schedule: "리아시",
-        },
-      ],
-    },
-    {
-      date: "2024-10-01",
-      schedules: [
-        {
-          id: 417,
-          member: "ryujin",
-          time: "16:17",
-          schedule: "류진시",
-        },
-      ],
-    },
-    {
-      date: "2024-10-02",
-      schedules: [
-        {
-          id: 605,
-          member: "chaeryeong",
-          time: "18:05",
-          schedule: "채령시",
-        },
-      ],
-    },
-    {
-      date: "2024-10-03",
-      schedules: [
-        {
-          id: 1209,
-          member: "yuna",
-          time: "12:09",
-          schedule: "유나시",
-        },
-      ],
-    },
-    {
-      date: "2024-10-04",
-      schedules: [
-        {
-          id: 212,
-          member: "itzy",
-          time: "02:12",
-          schedule: "있지시",
-        },
-        {
-          id: 708,
-          member: "itzy",
-          time: "19:08",
-          schedule: "믿지시",
-        },
-      ],
-    },
-    {
-      date: "2024-10-05",
-    },
-  ];
+const getWeekOfMonth = (targetDate: Dayjs): WeekInfo => {
+  const weekDates: DateString[] = [];
 
-  const wednesday = currentDate.startOf("week").add(3, "day");
+  const startOfWeek = targetDate.startOf("week");
+  for (let i = 0; i < 7; i++) {
+    weekDates.push(
+      startOfWeek.add(i, "day").format("YYYY-MM-DD") as DateString
+    );
+  }
+
+  // 수요일 (주차의 기점)
+  const wednesday = startOfWeek.add(3, "day");
   const startOfMonth = wednesday.startOf("month");
 
   // 해당 월의 첫 번째 날이 속한 주의 요일
@@ -103,41 +79,102 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
 
   // 수요일 기준으로 월의 몇 번째 주인지 계산
   const dayOfMonth = wednesday.date();
-  const weekOfMonth = Math.ceil((dayOfMonth + firstDayOfWeek) / 7);
+  const week = Math.ceil((dayOfMonth + firstDayOfWeek) / 7);
 
   // 수요일이 속한 월
   const month = wednesday.month() + 1;
 
-  // 현재 날짜의 스케줄
-  const { schedules, date: scheduleDate } =
-    weeklySchedulesMockup.find(
-      ({ date }) => date === currentDate.format("YYYY-MM-DD")
-    ) ?? {};
+  return { month, week, weekDates };
+};
 
-  const scheduleDateTime = (time: TimeString) => `${scheduleDate} ${time}`;
+const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
+  // 선택 된 날짜
+  const [currentDate, setCurrentDate] = useState<Dayjs>(dayjs());
+
+  // 현재 주차 정보
+  const [weekInfo, setWeekInfo] = useState<WeekInfo>(
+    getWeekOfMonth(currentDate)
+  );
+
+  // TODO: 현재 날짜 기준으로 주간 스케줄 페칭
+  const [weeklySchedules, setWeeklySchedules] = useState<Schedule[]>(
+    weeklySchedulesMockup
+  );
+
+  // 현재 날짜의 스케줄
+  const [schedules, setSchedules] = useState<Schedule[]>([]);
+
+  // 선택 된 스케줄
+  const [currentSchedule, setCurrentSchedule] = useState<Schedule>();
+
+  useEffect(() => {
+    setWeekInfo((prevWeekInfo) => {
+      const newWeekInfo = getWeekOfMonth(currentDate);
+
+      if (
+        prevWeekInfo.month !== newWeekInfo.month ||
+        prevWeekInfo.week !== newWeekInfo.week
+      ) {
+        setWeeklySchedules(weeklySchedulesMockup);
+      }
+
+      return newWeekInfo;
+    });
+
+    const dateSchedules = weeklySchedules.filter(({ dateTime }) =>
+      currentDate.isSame(dateTime, "date")
+    );
+
+    setSchedules(dateSchedules);
+
+    if (dateSchedules.length) {
+      setCurrentSchedule(dateSchedules[0]);
+    } else {
+      setCurrentSchedule(undefined);
+    }
+  }, [currentDate, weeklySchedules]);
+
+  const moveWeek = (direction: "prev" | "next") => {
+    setCurrentDate(currentDate.add(direction === "next" ? 7 : -7, "day"));
+  };
 
   return (
     <Card className={className}>
       <header className="flex items-center justify-between px-1">
-        <h6 className="font-medium">{`${month}월 ${weekOfMonth}주차`}</h6>
+        <h6 className="font-medium">{`${weekInfo.month}월 ${weekInfo.week}주차`}</h6>
 
-        <div className="flex gap-4 text-neutral-300">
-          <div className="h-6 w-6 text-center">
-            <FontAwesomeIcon icon={faChevronLeft} size="sm" />
-          </div>
+        <div className="flex text-neutral-400">
+          {!dayjs().isSame(currentDate, "date") && (
+            <Button
+              variant="text"
+              size="sm"
+              className="mr-1 text-xs"
+              onClick={() => setCurrentDate(dayjs())}
+            >
+              TODAY
+            </Button>
+          )}
 
-          <div className="h-6 w-6 text-center">
-            <FontAwesomeIcon icon={faChevronRight} size="sm" />
-          </div>
+          <IconButton
+            icon={faChevronLeft}
+            size="sm"
+            className="mr-3"
+            onClick={() => moveWeek("prev")}
+          />
+          <IconButton
+            icon={faChevronRight}
+            size="sm"
+            onClick={() => moveWeek("next")}
+          />
         </div>
       </header>
 
       <section className="grid grid-cols-7 place-items-center gap-1 py-3">
-        {weeklySchedulesMockup.map(({ date }) => (
+        {weekInfo.weekDates.map((date) => (
           <div
             key={date}
             className={twJoin(
-              "aspect-square w-8 text-center leading-8",
+              "aspect-square w-8 cursor-pointer text-center leading-8",
               currentDate.isSame(date, "date") &&
                 "rounded-full bg-primary-500 font-semibold text-white",
               !currentDate.isSame(date, "date") && "text-neutral-400"
@@ -149,50 +186,63 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
         ))}
       </section>
 
-      {schedules?.length && (
-        <section className="grid gap-4 p-2">
-          <div className="flex items-center justify-between">
-            <figure>
-              <Twinzy member={schedules[0].member} size={60} />
-            </figure>
+      <section className="grid gap-4 p-2">
+        {currentSchedule ? (
+          <>
+            <div className="flex items-center justify-between">
+              <figure>
+                <Twinzy member={currentSchedule.member} size={60} />
+              </figure>
 
-            <div>
-              <time
-                className="mb-2 flex justify-end"
-                dateTime={scheduleDateTime(schedules[0].time)}
-              >
-                <span className="text-4xl font-bold leading-none">
-                  {dayjs(scheduleDateTime(schedules[0].time)).format("h:mm")}
-                </span>
+              <div>
+                <time
+                  className="mb-2 flex justify-end"
+                  dateTime={currentSchedule.dateTime}
+                >
+                  <span className="text-4xl font-bold leading-none">
+                    {dayjs(currentSchedule.dateTime).format("h:mm")}
+                  </span>
 
-                <span className="ml-0.5 text-sm text-neutral-500">
-                  {dayjs(scheduleDateTime(schedules[0].time)).format("A")}
-                </span>
-              </time>
+                  <span className="ml-0.5 text-sm text-neutral-500">
+                    {dayjs(currentSchedule.dateTime).format("A")}
+                  </span>
+                </time>
 
-              <div className="rounded-full bg-slate-200 bg-opacity-70 px-2">
-                <span className="mr-1 text-xs leading-5 text-itzy-200">
-                  D-12
-                </span>
-                <span className="text-sm text-neutral-400">19:02:12</span>
+                <Countdown targetDate={currentSchedule.dateTime} />
               </div>
             </div>
+
+            <h5 className="py-2 text-lg">{currentSchedule.schedule}</h5>
+          </>
+        ) : (
+          <div className="h-36 w-full text-center leading-[9rem]">
+            <span className="align-middle text-lg font-semibold">
+              믿지 만날 준비 중🥰
+            </span>
           </div>
+        )}
+      </section>
 
-          <h5 className="py-2 text-lg">{schedules[0].schedule}</h5>
-        </section>
-      )}
-
-      {schedules?.length && (
+      {schedules.length ? (
         <section>
           <List className="-mx-2 grid gap-2 py-4">
-            {schedules.map(({ id, member, time, schedule }) => (
-              <ListItem key={id} className="w-full overflow-hidden">
+            {schedules.map(({ id, dateTime, member, schedule }) => (
+              <ListItem
+                key={id}
+                className="w-full cursor-pointer overflow-hidden"
+                onClick={() =>
+                  setCurrentSchedule({ id, dateTime, member, schedule })
+                }
+              >
                 <time
-                  dateTime={scheduleDateTime(time)}
+                  dateTime={dateTime}
                   className="rounded-full bg-primary-300 px-2 py-1 text-sm"
                 >
-                  {time}
+                  <span>{dayjs(dateTime).format("hh:mm")}</span>
+
+                  <span className="ml-0.5 text-xs text-neutral-500">
+                    {dayjs(dateTime).format("A")}
+                  </span>
                 </time>
 
                 <Twinzy member={member} />
@@ -202,7 +252,7 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
             ))}
           </List>
         </section>
-      )}
+      ) : null}
     </Card>
   );
 };

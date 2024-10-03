@@ -12,9 +12,16 @@ const Twinzy = ({ member, size = 24 }: MembersProps) => {
   };
 
   return twinzyInfo[member] === "ITZY" ? (
-    <ITZY />
+    <ITZY size={size} />
   ) : (
-    <Image src={twinzyInfo[member]} alt={member} width={size} height={size} />
+    <Image
+      src={twinzyInfo[member]}
+      alt={member}
+      width={size}
+      height={size}
+      style={{ width: `${size}px`, height: `${size}px` }}
+      className="object-contain"
+    />
   );
 };
 
