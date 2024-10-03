@@ -33,16 +33,14 @@ const Countdown = ({ targetDate }: CountdownProps) => {
   });
 
   useEffect(() => {
-    setDdayCountdown(calculateDday(targetDate));
+    const dday = calculateDday(targetDate);
+    setDdayCountdown(dday);
 
-    const intervalId = setInterval(() => {
+    if (dday.isEnd) return;
+
+    const countdown = setInterval(() => {
       setDdayCountdown((prevDday) => {
-        let { days, hours, minutes, seconds, isEnd } = prevDday;
-
-        if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
-          clearInterval(intervalId);
-          return { days: 0, hours: 0, minutes: 0, seconds: 0, isEnd: true };
-        }
+        let { days, hours, minutes, seconds } = prevDday;
 
         seconds--;
 
@@ -61,15 +59,20 @@ const Countdown = ({ targetDate }: CountdownProps) => {
           }
         }
 
+        if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
+          clearInterval(countdown);
+          return { days: 0, hours: 0, minutes: 0, seconds: 0, isEnd: true };
+        }
+
         return { days, hours, minutes, seconds, isEnd: false };
       });
     }, 1000);
 
-    return () => clearInterval(intervalId);
+    return () => clearInterval(countdown);
   }, [targetDate]);
 
   return (
-    <div className="rounded-full bg-slate-200 bg-opacity-70 px-2">
+    <div className="float-end w-max rounded-full bg-slate-200 bg-opacity-70 px-2">
       <span
         aria-label={`D-Day ${ddayCountdown.days}`}
         className="mx-1 text-xs leading-5 text-itzy-200"
