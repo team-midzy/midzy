@@ -102,10 +102,18 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
   );
 
   // 현재 날짜의 스케줄
-  const [schedules, setSchedules] = useState<Schedule[]>([]);
+  const [schedules, setSchedules] = useState<Schedule[]>(
+    weeklySchedules.length
+      ? weeklySchedules.filter(({ dateTime }) =>
+          currentDate.isSame(dateTime, "date")
+        )
+      : []
+  );
 
   // 선택 된 스케줄
-  const [currentSchedule, setCurrentSchedule] = useState<Schedule>();
+  const [currentSchedule, setCurrentSchedule] = useState<Schedule | null>(
+    schedules.length ? schedules[0] : null
+  );
 
   useEffect(() => {
     setWeekInfo((prevWeekInfo) => {
@@ -130,7 +138,7 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
     if (dateSchedules.length) {
       setCurrentSchedule(dateSchedules[0]);
     } else {
-      setCurrentSchedule(undefined);
+      setCurrentSchedule(null);
     }
   }, [currentDate, weeklySchedules]);
 
