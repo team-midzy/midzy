@@ -14,10 +14,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faCertificate, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 
 const Home = () => {
-  const officialChannels = [
+  const officialChannels: (OfficialChannelsProps & { id: number })[] = [
     {
       id: 0,
       title: "한국 / 글로벌",
@@ -208,9 +207,9 @@ const Home = () => {
 
   return (
     <>
-      <WeeklyScheduler className="col-span-12" />
+      <WeeklyScheduler className="col-span-12 lg:col-span-8" />
 
-      <Card className="col-span-12">
+      <Card className="col-span-12 lg:col-span-4">
         <header className="flex items-center gap-1">
           <h6 className="font-medium">ITZY Official</h6>
 
