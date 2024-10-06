@@ -4,11 +4,11 @@ import Image from "next/image";
 const Twinzy = ({ member, size = 24 }: MembersProps) => {
   const twinzyInfo: MemberInfos = {
     itzy: "ITZY",
-    yeji: "/images/kkengee.webp",
-    lia: "/images/li-li.webp",
-    ryujin: "/images/ryujji.webp",
-    chaeryeong: "/images/ryeowoo.webp",
-    yuna: "/images/naong.webp",
+    yeji: "/images/twinzy/kkengee.webp",
+    lia: "/images/twinzy/li-li.webp",
+    ryujin: "/images/twinzy/ryujji.webp",
+    chaeryeong: "/images/twinzy/ryeowoo.webp",
+    yuna: "/images/twinzy/naong.webp",
   };
 
   return twinzyInfo[member] === "ITZY" ? (

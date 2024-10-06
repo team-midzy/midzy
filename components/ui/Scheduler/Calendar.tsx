@@ -87,35 +87,35 @@ const Calendar = () => {
                     <ITZY className="w-5" />
 
                     <Image
-                      src="/images/kkengee.webp"
+                      src="/images/twinzy/kkengee.webp"
                       alt="예지"
                       width={20}
                       height={20}
                     />
 
                     <Image
-                      src="/images/li-li.webp"
+                      src="/images/twinzy/li-li.webp"
                       alt="리아"
                       width={20}
                       height={20}
                     />
 
                     <Image
-                      src="/images/ryujji.webp"
+                      src="/images/twinzy/ryujji.webp"
                       alt="류진"
                       width={20}
                       height={20}
                     />
 
                     <Image
-                      src="/images/ryeowoo.webp"
+                      src="/images/twinzy/ryeowoo.webp"
                       alt="채령"
                       width={20}
                       height={20}
                     />
 
                     <Image
-                      src="/images/naong.webp"
+                      src="/images/twinzy/naong.webp"
                       alt="유나"
                       width={20}
                       height={20}
