@@ -1,4 +1,5 @@
 import { TextLink } from "@/components/ui";
+import menus from "@/config/menus.json";
 
 const Pointer = () => (
   <div className="absolute -bottom-1 flex w-full justify-center">
@@ -10,21 +11,14 @@ const Nav = () => {
   return (
     <nav className="hidden sm:block">
       <ul className="flex gap-6">
-        <li>
-          <TextLink href="#">서포트</TextLink>
-        </li>
-
-        <li>
-          <TextLink href="#">스케줄</TextLink>
-        </li>
-
-        <li>
-          <TextLink href="#">스밍가이드</TextLink>
-        </li>
-
-        <li>
-          <TextLink href="#">교환</TextLink>
-        </li>
+        {menus.map(
+          ({ id, name, path, isActive }) =>
+            isActive && (
+              <li key={id}>
+                <TextLink href={path}>{name}</TextLink>
+              </li>
+            )
+        )}
       </ul>
     </nav>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { List, ListItem, TextLink } from "@/components/ui";
+import menus from "@/config/menus.json";
 import useNavDrawerStore from "@/stores/useNavDrawerStore";
 import { useEffect } from "react";
 import { twJoin } from "tailwind-merge";
@@ -39,29 +40,20 @@ const Drawer = () => {
         )}
       >
         <List>
-          <TextLink href="#">
-            <ListItem className="rounded-lg bg-transparent hover:bg-slate-300 hover:bg-opacity-20">
-              서포트
-            </ListItem>
-          </TextLink>
-
-          <TextLink href="#">
-            <ListItem className="rounded-lg bg-transparent hover:bg-slate-300 hover:bg-opacity-20">
-              스케줄
-            </ListItem>
-          </TextLink>
-
-          <TextLink href="#">
-            <ListItem className="rounded-lg bg-transparent hover:bg-slate-300 hover:bg-opacity-20">
-              스밍가이드
-            </ListItem>
-          </TextLink>
-
-          <TextLink href="#">
-            <ListItem className="rounded-lg bg-transparent hover:bg-slate-300 hover:bg-opacity-20">
-              교환
-            </ListItem>
-          </TextLink>
+          {menus.map(
+            ({ id, name, path, isActive }) =>
+              isActive && (
+                <ListItem
+                  key={id}
+                  className="rounded-lg bg-transparent p-0 hover:bg-slate-300 hover:bg-opacity-20"
+                  onClick={closeDrawer}
+                >
+                  <TextLink href={path} className="w-full px-3 py-2">
+                    {name}
+                  </TextLink>
+                </ListItem>
+              )
+          )}
         </List>
       </div>
     </>

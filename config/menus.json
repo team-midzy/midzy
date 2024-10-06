@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "name": "공지",
+    "path": "notices",
+    "isActive": true
+  },
+  {
+    "id": 1,
+    "name": "서포트",
+    "path": "supports",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "스밍가이드",
+    "path": "streaming-guides",
+    "isActive": false
+  },
+  {
+    "id": 3,
+    "name": "응원법",
+    "path": "fanchants",
+    "isActive": false
+  },
+  {
+    "id": 4,
+    "name": "교환게시판",
+    "path": "exchange",
+    "isActive": false
+  }
+]
