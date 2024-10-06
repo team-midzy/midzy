@@ -1,12 +1,12 @@
 "use client";
 
+import Countdown from "@/components/common/Scheduler/Countdown";
 import Button from "@/components/ui/Button/Button";
 import IconButton from "@/components/ui/Button/IconButton";
 import Card from "@/components/ui/Card/Card";
 import List from "@/components/ui/List/List";
 import ListItem from "@/components/ui/List/ListItem";
 import Twinzy from "@/components/ui/Members/Twinzy";
-import Countdown from "@/components/ui/Scheduler/Countdown";
 import {
   faChevronLeft,
   faChevronRight,
