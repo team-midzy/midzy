@@ -25,7 +25,7 @@ const Drawer = () => {
     <>
       <div
         className={twJoin(
-          "fixed inset-0 bg-slate-50 bg-opacity-10 backdrop-blur-sm",
+          "fixed inset-0 z-40 bg-slate-50 bg-opacity-10 backdrop-blur-sm",
           !isOpen && "hidden"
         )}
         onClick={closeDrawer}
@@ -33,7 +33,7 @@ const Drawer = () => {
 
       <div
         className={twJoin(
-          "fixed left-0 top-14 h-[calc(100%-56px)] w-64 transform bg-slate-50 bg-opacity-30 p-2 shadow-xl backdrop-blur-md transition-transform duration-300 ease-in-out",
+          "fixed left-0 top-14 z-50 h-[calc(100%-56px)] w-64 transform bg-slate-50 bg-opacity-30 p-2 shadow-xl backdrop-blur-md transition-transform duration-300 ease-in-out",
           isOpen && "sm:-translate-x-full",
           !isOpen && "-translate-x-full"
         )}
