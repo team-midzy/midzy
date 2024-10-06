@@ -1,5 +1,6 @@
 import OfficialChannels from "@/app/components/OfficialChannels";
 import { Card, ITZY, WeeklyScheduler } from "@/components";
+import Member from "@/components/ui/Members/Member";
 import {
   faApple,
   faFacebookF,
@@ -179,62 +180,27 @@ const Home = () => {
         {
           name: "yezyizhere",
           link: "https://www.instagram.com/yezyizhere/",
-          IconComponent: (
-            <Image
-              src="/images/itzy/yeji.webp"
-              alt="yezyizhere"
-              width={32}
-              height={32}
-            />
-          ),
+          IconComponent: <Member member="yeji" size={32} />,
         },
         {
           name: "lia_loves___",
           link: "https://www.instagram.com/lia_loves___/",
-          IconComponent: (
-            <Image
-              src="/images/itzy/lia.webp"
-              alt="lia_loves___"
-              width={32}
-              height={32}
-            />
-          ),
+          IconComponent: <Member member="lia" size={32} />,
         },
         {
           name: "iamfinethankyouandryu",
           link: "https://www.instagram.com/iamfinethankyouandryu/",
-          IconComponent: (
-            <Image
-              src="/images/itzy/ryujin.webp"
-              alt="iamfinethankyouandryu"
-              width={32}
-              height={32}
-            />
-          ),
+          IconComponent: <Member member="ryujin" size={32} />,
         },
         {
           name: "chaerrry0",
           link: "https://www.instagram.com/chaerrry0/",
-          IconComponent: (
-            <Image
-              src="/images/itzy/chaeryeong.webp"
-              alt="chaerrry0"
-              width={32}
-              height={32}
-            />
-          ),
+          IconComponent: <Member member="chaeryeong" size={32} />,
         },
         {
           name: "igotyuandme",
           link: "https://www.instagram.com/igotyuandme/",
-          IconComponent: (
-            <Image
-              src="/images/itzy/yuna.webp"
-              alt="igotyuandme"
-              width={32}
-              height={32}
-            />
-          ),
+          IconComponent: <Member member="yuna" size={32} />,
         },
       ],
     },

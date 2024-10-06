@@ -6,6 +6,7 @@ import IconButton from "@/components/ui/Button/IconButton";
 import Card from "@/components/ui/Card/Card";
 import List from "@/components/ui/List/List";
 import ListItem from "@/components/ui/List/ListItem";
+import Member from "@/components/ui/Members/Member";
 import Twinzy from "@/components/ui/Members/Twinzy";
 import {
   faChevronLeft,
@@ -199,7 +200,7 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
           <>
             <div className="flex items-center justify-between">
               <figure>
-                <Twinzy member={currentSchedule.member} size={60} />
+                <Member member={currentSchedule.member} size={68} />
               </figure>
 
               <div>
