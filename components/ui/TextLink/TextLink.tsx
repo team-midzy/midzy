@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 
-const TextLink = ({ children, className, href }: TextLinkProps) => {
+const TextLink = ({
+  children,
+  className,
+  href,
+  target = "_self",
+}: TextLinkProps) => {
   return (
     <Link
       className={twMerge(
@@ -9,6 +14,7 @@ const TextLink = ({ children, className, href }: TextLinkProps) => {
         className
       )}
       href={href}
+      target={target}
     >
       {children}
     </Link>
