@@ -11,7 +11,7 @@ const IconButton = ({
   <button
     type="button"
     className={twMerge(
-      "rounded-full text-center transition duration-300 ease-in-out hover:text-itzy-500",
+      "rounded-full text-center transition-all duration-300 ease-in-out hover:text-itzy-500",
       size === "sm" && "h-5 w-5 leading-5",
       size === "default" && "h-6 w-6",
       size === "lg" && "h-7 w-7",

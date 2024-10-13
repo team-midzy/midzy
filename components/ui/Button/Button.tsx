@@ -10,7 +10,7 @@ const Button = ({
   <button
     type="button"
     className={twMerge(
-      "rounded-full font-semibold transition duration-300 ease-in-out",
+      "rounded-full font-semibold transition-all duration-300 ease-in-out",
       variant === "plain" && "bg-primary-500 hover:bg-primary-400",
       variant === "text" && "hover:text-primary-500",
       size === "xs" && "h-6 px-2",

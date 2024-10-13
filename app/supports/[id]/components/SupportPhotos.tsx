@@ -44,7 +44,7 @@ const SupportPhotos = ({ path, photos }: SupportPhotosProps) => {
               quality={90}
               width={400}
               height={400}
-              className="col-span-4 aspect-square cursor-pointer rounded-md object-cover transition hover:scale-[1.03] md:col-span-3 xl:col-span-2"
+              className="col-span-4 aspect-square cursor-pointer rounded-md object-cover transition-all hover:scale-[1.03] md:col-span-3 xl:col-span-2"
               onClick={() => openImageModal(index)}
             />
           ))}
@@ -67,7 +67,7 @@ const SupportPhotos = ({ path, photos }: SupportPhotosProps) => {
 
         <div
           className={twJoin(
-            "flex h-full w-full items-center justify-center transition duration-200 ease-in-out",
+            "flex h-full w-full items-center justify-center transition-all duration-200 ease-in-out",
             !imageModal && "translate-y-2"
           )}
         >
