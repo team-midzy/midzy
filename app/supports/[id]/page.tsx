@@ -4,6 +4,7 @@ import supports from "@/config/supports.json";
 import { faBookOpen, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import Link from "next/link";
 
 interface SupportDetailProps {
   params: {
@@ -61,13 +62,18 @@ const SupportDetail = ({ params }: SupportDetailProps) => {
                 </Button>
 
                 {pdf && (
-                  <Button variant="text" className="font-normal">
-                    <FontAwesomeIcon
-                      icon={faFilePdf}
-                      className="text-red-500"
-                    />
-                    <span className="ml-1.5">다운로드</span>
-                  </Button>
+                  <Link
+                    href={`https://drive.google.com/file/d/${pdf}/view?usp=drive_link`}
+                    target="_blank"
+                  >
+                    <Button variant="text" className="font-normal">
+                      <FontAwesomeIcon
+                        icon={faFilePdf}
+                        className="mr-2 text-red-500"
+                      />
+                      다운로드
+                    </Button>
+                  </Link>
                 )}
               </div>
             </>
