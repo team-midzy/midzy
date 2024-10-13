@@ -152,11 +152,11 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
       <header className="flex items-center justify-between px-1">
         <h6 className="font-bold">{`${weekInfo.month}월 ${weekInfo.week}주차`}</h6>
 
-        <div className="flex text-neutral-400">
+        <div className="flex items-center text-neutral-400">
           {!dayjs().isSame(currentDate, "date") && (
             <Button
               variant="text"
-              size="sm"
+              size="xs"
               className="mr-1 text-xs"
               onClick={() => setCurrentDate(dayjs())}
             >
