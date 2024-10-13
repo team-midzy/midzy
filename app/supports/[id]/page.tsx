@@ -1,3 +1,4 @@
+import SupportPhotos from "@/app/supports/[id]/components/SupportPhotos";
 import { Button, Card } from "@/components";
 import supports from "@/config/supports.json";
 import { faBookOpen, faFilePdf } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +12,7 @@ interface SupportDetailProps {
 }
 
 const SupportDetail = ({ params }: SupportDetailProps) => {
-  const { id, title, description, date, path, photos, contents, pdf } =
+  const { title, description, date, path, photos, contents, pdf } =
     supports.find(({ id }) => id === Number(params.id)) ?? {};
 
   return (
@@ -74,23 +75,7 @@ const SupportDetail = ({ params }: SupportDetailProps) => {
         </section>
       </Card>
 
-      <Card className="col-span-12" containerTag="section">
-        <h5 className="col-span-4 text-lg font-bold">사진 📷</h5>
-
-        {/* 사진 */}
-        <section className="mt-2 grid grid-cols-12 gap-1.5">
-          {[...Array(photos)].map((_, index) => (
-            <Image
-              key={`photo-${index}`}
-              src={`/images/supports/${path}/photos/${path}_photo_${String(index).padStart(3, "0")}.webp`}
-              alt={`사진${index + 1}`}
-              width={400}
-              height={400}
-              className="col-span-4 aspect-square cursor-pointer rounded-md object-cover transition hover:scale-[1.03] md:col-span-3 xl:col-span-2"
-            />
-          ))}
-        </section>
-      </Card>
+      <SupportPhotos photos={photos} path={path} />
     </>
   );
 };
