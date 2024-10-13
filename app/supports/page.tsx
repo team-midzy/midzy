@@ -1,6 +1,7 @@
 import { Card, TextLink } from "@/components";
 import supports from "@/config/supports.json";
 import Image from "next/image";
+import Link from "next/link";
 
 const Supports = () => {
   const latestSupport: MessageBook = supports[0] as MessageBook;
@@ -19,7 +20,7 @@ const Supports = () => {
             quality={100}
             width={640}
             height={640}
-            className="rounded-lg shadow-sm"
+            className="rounded-lg shadow-md"
           />
         </figure>
 
@@ -34,7 +35,10 @@ const Supports = () => {
           <h4 className="py-1 text-2xl font-bold">{latestSupport.title}</h4>
           <p className="py-2 text-neutral-600">{latestSupport.description}</p>
 
-          <TextLink href="" className="font-medium">
+          <TextLink
+            href={`supports/${latestSupport.id}`}
+            className="font-medium"
+          >
             보러가기 ✨
           </TextLink>
         </section>
@@ -47,32 +51,34 @@ const Supports = () => {
         <h6 className="col-span-4 font-bold">역대 서포트 💝</h6>
 
         {prevSupport.map(({ id, path, title, description, date }) => (
-          <article
-            key={id}
-            className="col-span-4 text-center sm:col-span-2 lg:col-span-1"
-          >
-            <figure className="mx-auto grid aspect-square max-h-60 max-w-60 place-content-center overflow-hidden rounded-lg transition-all duration-200 ease-out hover:scale-105">
-              <Image
-                src={`/images/supports/${path}/${path}_cover.webp`}
-                alt={title}
-                quality={90}
-                width={240}
-                height={240}
-                className="max-h-full max-w-full cursor-pointer rounded-lg"
-              />
-            </figure>
+          <article key={id} className="col-span-2 text-center lg:col-span-1">
+            <Link href={`supports/${id}`}>
+              <figure className="mx-auto grid aspect-square max-h-60 max-w-60 place-content-center overflow-hidden rounded-lg transition-all duration-200 ease-out hover:scale-105">
+                <Image
+                  src={`/images/supports/${path}/${path}_cover.webp`}
+                  alt={title}
+                  quality={90}
+                  width={240}
+                  height={240}
+                  className="max-h-full max-w-full cursor-pointer rounded-lg"
+                />
+              </figure>
+            </Link>
 
             <section className="py-4">
-              <p className="cursor-pointer text-sm font-semibold text-neutral-600 transition-all duration-200 ease-out hover:text-primary-500">
-                {description}
-              </p>
-
-              <time
-                dateTime={date}
-                className="cursor-pointer text-xs text-neutral-400"
-              >
-                {date}
-              </time>
+              <Link href={`supports/${id}`}>
+                <p className="cursor-pointer text-sm font-semibold text-neutral-600 transition-all duration-200 ease-out hover:text-primary-500">
+                  {description}
+                </p>
+              </Link>
+              <Link href={`supports/${id}`}>
+                <time
+                  dateTime={date}
+                  className="cursor-pointer text-xs text-neutral-400"
+                >
+                  {date}
+                </time>
+              </Link>
             </section>
           </article>
         ))}
