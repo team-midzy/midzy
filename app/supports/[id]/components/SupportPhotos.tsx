@@ -17,6 +17,7 @@ const SupportPhotos = ({ path, photos }: SupportPhotosProps) => {
   const [viewImageIndex, setViewImageIndex] = useState<number | null>(null);
 
   const openImageModal = (index: number): void => {
+    document.body.style.overflow = "hidden";
     setViewImageIndex(index);
     setImageModal(true);
   };
@@ -25,6 +26,7 @@ const SupportPhotos = ({ path, photos }: SupportPhotosProps) => {
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ): void => {
     event.stopPropagation();
+    document.body.style.overflow = "auto";
     setViewImageIndex(null);
     setImageModal(false);
   };
