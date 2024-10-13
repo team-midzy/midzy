@@ -4,7 +4,7 @@ import { twJoin } from "tailwind-merge";
 const OfficialChannels = ({ title, channels }: OfficialChannelsProps) => {
   return (
     <section className="py-3">
-      <p className="mb-2 text-sm">{title}</p>
+      <p className="mb-2 text-sm font-medium">{title}</p>
 
       <ul className="flex flex-wrap gap-4">
         {channels.map(({ name, link, twBgClassName, IconComponent }) => (

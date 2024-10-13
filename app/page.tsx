@@ -211,7 +211,7 @@ const Home = () => {
 
       <Card className="col-span-12 lg:col-span-4">
         <header className="flex items-center gap-1">
-          <h6 className="font-medium">ITZY Official</h6>
+          <h6 className="font-bold">ITZY Official</h6>
 
           <figure className="relative mb-1 flex h-5 w-5 items-center justify-center">
             <FontAwesomeIcon icon={faCertificate} className="text-sky-500" />
