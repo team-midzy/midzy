@@ -67,7 +67,7 @@ const SupportPhotos = ({ path, photos }: SupportPhotosProps) => {
 
         <div
           className={twJoin(
-            "transition duration-200 ease-in-out",
+            "flex h-full w-full items-center justify-center transition duration-200 ease-in-out",
             !imageModal && "translate-y-2"
           )}
         >
@@ -76,9 +76,9 @@ const SupportPhotos = ({ path, photos }: SupportPhotosProps) => {
               src={`/images/supports/${path}/photos/${path}_photo_${String(viewImageIndex).padStart(3, "0")}.webp`}
               alt="Detail"
               quality={100}
-              width={1000}
-              height={1000}
-              className={"max-h-full max-w-full rounded-xl shadow-lg"}
+              width={800}
+              height={800}
+              className={"max-h-full w-auto rounded-xl shadow-lg"}
               onClick={(event) => event.stopPropagation()}
             />
           )}
