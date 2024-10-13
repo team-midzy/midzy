@@ -10,7 +10,7 @@ const TextLink = ({
   return (
     <Link
       className={twMerge(
-        "font-semibold transition-all duration-300 ease-in-out hover:text-itzy-500",
+        "font-semibold transition-all duration-300 ease-in-out hover:text-primary-500",
         className
       )}
       href={href}
