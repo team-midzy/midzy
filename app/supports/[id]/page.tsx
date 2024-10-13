@@ -56,10 +56,12 @@ const SupportDetail = ({ params }: SupportDetailProps) => {
               </div>
 
               <div className="mt-auto flex gap-3">
-                <Button>
-                  <FontAwesomeIcon icon={faBookOpen} className="mr-2" />
-                  읽어보기
-                </Button>
+                <Link href={`/supports/viewer/${params.id}`}>
+                  <Button>
+                    <FontAwesomeIcon icon={faBookOpen} className="mr-2" />
+                    읽어보기
+                  </Button>
+                </Link>
 
                 {pdf && (
                   <Link
