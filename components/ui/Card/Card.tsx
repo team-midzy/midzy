@@ -8,7 +8,7 @@ const Card = ({
   return (
     <Container
       className={twMerge(
-        "rounded-2xl bg-white bg-opacity-50 px-5 py-4",
+        "rounded-2xl bg-white bg-opacity-50 px-5 py-4 md:px-6 md:py-5",
         className
       )}
     >
