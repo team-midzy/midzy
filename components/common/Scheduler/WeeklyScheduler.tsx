@@ -183,10 +183,13 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
           <div
             key={date}
             className={twJoin(
-              "aspect-square w-8 cursor-pointer text-center leading-8",
+              "h-8 w-8 cursor-pointer rounded-full text-center leading-8 transition-all duration-200 ease-in-out hover:bg-primary-300 hover:text-white",
               currentDate.isSame(date, "date") &&
-                "rounded-full bg-primary-500 font-semibold text-white",
-              !currentDate.isSame(date, "date") && "text-neutral-400"
+                "bg-primary-500 font-semibold text-white",
+              !currentDate.isSame(date, "date") && "text-neutral-400",
+              !currentDate.isSame(date, "date") &&
+                dayjs().isSame(date, "date") &&
+                "border border-itzy-200"
             )}
             onClick={() => setCurrentDate(dayjs(date))}
           >
