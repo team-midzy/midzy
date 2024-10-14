@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { twJoin } from "tailwind-merge";
 
+export const runtime = "edge";
+
 interface MessageBookViewerProps {
   params: {
     id: string;
