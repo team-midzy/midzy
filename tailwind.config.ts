@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         ...customColors,
-        primary: customColors.gold,
+        primary: customColors.itzy,
       },
     },
     container: {
