@@ -165,7 +165,7 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
           <>
             <div className="flex items-center justify-between">
               <figure>
-                <Member member={currentSchedule.member} size={68} />
+                <Member member={currentSchedule.member} size={80} />
               </figure>
 
               <div>
@@ -210,7 +210,7 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
               >
                 <time
                   dateTime={dateTime}
-                  className="w-[68px] rounded-full bg-primary-300 px-2 py-1 text-center text-xs"
+                  className="w-[66px] rounded-full bg-primary-300 px-2 py-1 text-center text-xs"
                 >
                   <span>{dayjs(dateTime).format("hh:mm")}</span>
 
