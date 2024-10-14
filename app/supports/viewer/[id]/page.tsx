@@ -29,6 +29,10 @@ const MessageBookViewr = ({ params }: MessageBookViewerProps) => {
     hidden: false,
   };
 
+  const visibleContents: Contents[] = contents!.filter(({ hidden }) => !hidden);
+  const viewContents = [titleContent];
+  if (visibleContents) viewContents.push(...visibleContents);
+
   const [isContents, setIsContents] = useState<boolean>(false);
   const toggleContents = () => {
     setIsContents(!isContents);
@@ -53,7 +57,11 @@ const MessageBookViewr = ({ params }: MessageBookViewerProps) => {
           src={`/images/supports/${path}/message-book/${path}_${String(index).padStart(3, "0")}.webp`}
           width={1280}
           height={1806}
-          className="col-span-12 mx-auto aspect-[640/903] max-h-[calc(100vh-92px)] w-auto rounded-lg object-cover shadow-lg xl:col-span-6"
+          className={twJoin(
+            "col-span-12 mx-auto aspect-[640/903] max-h-[calc(100vh-92px)] w-auto rounded-lg object-cover shadow-lg xl:col-span-6",
+            index % 2 === 0 && "xl:ml-auto xl:mr-0",
+            index % 2 === 1 && "xl:ml-0 xl:mr-auto"
+          )}
         />
       ))}
 
@@ -70,18 +78,15 @@ const MessageBookViewr = ({ params }: MessageBookViewerProps) => {
               !isContents && "invisible translate-y-2 opacity-0"
             )}
           >
-            {[titleContent, ...contents].map(
-              (content) =>
-                !content.hidden && (
-                  <ListItem
-                    key={content.index}
-                    className="cursor-pointer font-medium hover:bg-slate-300 hover:bg-opacity-20 hover:text-primary-500"
-                    onClick={() => moveIndex(content.index as number)}
-                  >
-                    {content.entry}
-                  </ListItem>
-                )
-            )}
+            {viewContents.map((content, i) => (
+              <ListItem
+                key={content.index}
+                className="cursor-pointer font-medium hover:bg-slate-300 hover:bg-opacity-20 hover:text-primary-500"
+                onClick={() => moveIndex(content.index as number)}
+              >
+                {`${i}. ${content.entry}`}
+              </ListItem>
+            ))}
           </List>
 
           <div
