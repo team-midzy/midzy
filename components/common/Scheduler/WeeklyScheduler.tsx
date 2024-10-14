@@ -8,6 +8,7 @@ import List from "@/components/ui/List/List";
 import ListItem from "@/components/ui/List/ListItem";
 import Member from "@/components/ui/Members/Member";
 import Twinzy from "@/components/ui/Members/Twinzy";
+import scheduleData from "@/config/schedules.json";
 import {
   faChevronLeft,
   faChevronRight,
@@ -15,51 +16,6 @@ import {
 import dayjs, { type Dayjs } from "dayjs";
 import { useEffect, useState } from "react";
 import { twJoin } from "tailwind-merge";
-
-const weeklySchedulesMockup: Schedule[] = [
-  {
-    id: 526,
-    dateTime: "2024-09-29 17:26",
-    member: "yeji",
-    schedule: "예지시",
-  },
-  {
-    id: 721,
-    dateTime: "2024-09-30 19:21",
-    member: "lia",
-    schedule: "리아시",
-  },
-  {
-    id: 417,
-    dateTime: "2024-10-01 16:17",
-    member: "ryujin",
-    schedule: "류진시",
-  },
-  {
-    id: 605,
-    dateTime: "2024-10-02 18:05",
-    member: "chaeryeong",
-    schedule: "채령시",
-  },
-  {
-    id: 1209,
-    dateTime: "2024-10-03 12:09",
-    member: "yuna",
-    schedule: "유나시",
-  },
-  {
-    id: 212,
-    dateTime: "2024-10-04 02:12",
-    member: "itzy",
-    schedule: "있지시",
-  },
-  {
-    id: 708,
-    dateTime: "2024-10-04 19:08",
-    member: "itzy",
-    schedule: "믿지시",
-  },
-];
 
 const getWeekOfMonth = (targetDate: Dayjs): WeekInfo => {
   const weekDates: DateString[] = [];
@@ -88,6 +44,11 @@ const getWeekOfMonth = (targetDate: Dayjs): WeekInfo => {
   return { month, week, weekDates };
 };
 
+const getWeeklyData = (date: Dayjs) =>
+  scheduleData.filter(({ dateTime }) =>
+    date.isSame(dayjs(dateTime), "week")
+  ) as Schedule[];
+
 const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
   // 선택 된 날짜
   const [currentDate, setCurrentDate] = useState<Dayjs>(dayjs());
@@ -98,8 +59,9 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
   );
 
   // TODO: 현재 날짜 기준으로 주간 스케줄 페칭
+
   const [weeklySchedules, setWeeklySchedules] = useState<Schedule[]>(
-    weeklySchedulesMockup
+    getWeeklyData(currentDate)
   );
 
   // 현재 날짜의 스케줄
@@ -124,7 +86,7 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
         prevWeekInfo.month !== newWeekInfo.month ||
         prevWeekInfo.week !== newWeekInfo.week
       ) {
-        setWeeklySchedules(weeklySchedulesMockup);
+        setWeeklySchedules(getWeeklyData(currentDate));
       }
 
       return newWeekInfo;
@@ -241,25 +203,25 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
             {schedules.map(({ id, dateTime, member, schedule }) => (
               <ListItem
                 key={id}
-                className="w-full cursor-pointer overflow-hidden"
+                className="grid w-full cursor-pointer grid-cols-[auto_auto_1fr] gap-2 overflow-hidden"
                 onClick={() =>
                   setCurrentSchedule({ id, dateTime, member, schedule })
                 }
               >
                 <time
                   dateTime={dateTime}
-                  className="rounded-full bg-primary-300 px-2 py-1 text-sm"
+                  className="w-[68px] rounded-full bg-primary-300 px-2 py-1 text-center text-xs"
                 >
                   <span>{dayjs(dateTime).format("hh:mm")}</span>
 
-                  <span className="ml-0.5 text-xs text-neutral-500">
+                  <span className="ml-0.5 text-[0.625rem] text-neutral-50">
                     {dayjs(dateTime).format("A")}
                   </span>
                 </time>
 
-                <Twinzy member={member} />
+                <Twinzy member={member} size={20} />
 
-                <span className="max-w-full truncate">{schedule}</span>
+                <span className="truncate text-sm">{schedule}</span>
               </ListItem>
             ))}
           </List>
