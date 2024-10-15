@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   description: "ITZY, MIDZY, 날자!",
 };
 
-const RootLayout = ({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) => {
+}
+
+const RootLayout = ({ children }: Readonly<RootLayoutProps>) => {
   return (
     <html lang="ko">
       <body className={pretendard.className}>
