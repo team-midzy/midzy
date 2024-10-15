@@ -3,7 +3,7 @@
     "id": 0,
     "name": "공지",
     "path": "/notices",
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 1,
@@ -21,7 +21,7 @@
     "id": 3,
     "name": "응원법",
     "path": "/fanchants",
-    "isActive": false
+    "isActive": true
   },
   {
     "id": 4,
