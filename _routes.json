@@ -1,0 +1,4 @@
+{
+  "include": ["/api/*", "/_next/data/*", "/dynamic/*"],
+  "exclude": ["/static/*", "/_next/static/*", "/images/*", "/favicon.ico"]
+}
