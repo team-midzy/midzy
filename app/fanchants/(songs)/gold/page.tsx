@@ -48,6 +48,9 @@ const Gold = () => {
         <p>
           <Midzy>(함성)</Midzy>
         </p>
+
+        <br />
+
         <p>
           평온함을 rip 대혼란을 일으켜 <Midzy>(골!)</Midzy>
         </p>
@@ -56,6 +59,9 @@ const Gold = () => {
         </p>
         <p>Going to my head, going all out of control</p>
         <p>Cuz I shine so bright like dynamite GOLD</p>
+
+        <br />
+
         <p>
           <Midzy>있! 지! 믿! 지!</Midzy>
         </p>
@@ -68,17 +74,17 @@ const Gold = () => {
         <p>
           Yeah <Chant>ITZY</Chant>
         </p>
+        <p>Yeah Ho</p>
 
-        <p>쉴 새 없는 하루</p>
+        <br />
+
         <p>
-          <Chant>Wait a minute</Chant>
+          쉴 새 없는 하루 <Chant>Wait a minute</Chant>
         </p>
-        <p>문젠 없지</p>
         <p>
-          <Chant>Wait a minute</Chant>
+          문젠 없지 <Chant>Wait a minute</Chant>
         </p>
-        <p>좀 더 재밌는 걸 찾아갈 뿐이지</p>
-        <p>What</p>
+        <p>좀 더 재밌는 걸 찾아갈 뿐이지 What</p>
 
         <br />
 
@@ -106,6 +112,9 @@ const Gold = () => {
         <p>
           <Midzy>(함성)</Midzy>
         </p>
+
+        <br />
+
         <p>Always in my head</p>
         <p>
           you a repeat of my <Chant>favorite song</Chant>
@@ -165,6 +174,9 @@ const Gold = () => {
         <p>
           <Midzy>(함성)</Midzy>
         </p>
+
+        <br />
+
         <p>Always in my head</p>
         <p>
           you a repeat of my <Chant>favorite song</Chant>
@@ -178,7 +190,7 @@ const Gold = () => {
         <br />
 
         <p>
-          It&apos;s like GOLD <Chant>(G! O! L! D!)</Chant>
+          It&apos;s like GOLD <Midzy>(G! O! L! D!)</Midzy>
         </p>
         <p>눈을 뗄 수 없이 glow</p>
         <p>
@@ -196,18 +208,21 @@ const Gold = () => {
           <Chant>Day and night we beaming blazing just like that</Chant>
         </p>
         <p>Head to toe we&apos;re G-O-L-D gold</p>
+
+        <br />
+
         <p>
           <Midzy>(황예지 최지수 신류진 이채령 신유나)</Midzy>
         </p>
         <p>
           <Midzy>(영원히 빛나줘 Just like that)</Midzy>
         </p>
-
-        <br />
-
         <p>
           <Midzy>(함성)</Midzy>
         </p>
+
+        <br />
+
         <p>
           It&apos;s like, it&apos;s like, it&apos;s like, it&apos;s like GOLD{" "}
           <Midzy>(G! O! L! D!)</Midzy>
@@ -216,7 +231,9 @@ const Gold = () => {
         <p>
           <Chant>Day and night we beaming blazing just like that</Chant>
         </p>
-        <p>Day and night we beaming blazing just like that</p>
+        <p>
+          <Chant>Day and night we beaming blazing just like that</Chant>
+        </p>
 
         <br />
 
@@ -230,6 +247,9 @@ const Gold = () => {
         <p>
           Head to toe we&apos;re G-O-L-D <Chant>gold</Chant>
         </p>
+
+        <br />
+
         <p>
           <Midzy>(함성)</Midzy>
         </p>
