@@ -49,6 +49,21 @@ const getWeeklyData = (date: Dayjs) =>
     date.isSame(dayjs(dateTime), "week")
   ) as Schedule[];
 
+const getCurrentSchedule = (
+  schedules: Schedule[],
+  currentSchedule?: Schedule | null
+) => {
+  if (!schedules.length) return null;
+
+  return (
+    schedules.find(({ dateTime }) =>
+      dayjs().isBefore(dayjs(dateTime), "second")
+    ) ??
+    currentSchedule ??
+    schedules[0]
+  );
+};
+
 const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
   // 선택 된 날짜
   const [currentDate, setCurrentDate] = useState<Dayjs>(dayjs());
@@ -75,7 +90,7 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
 
   // 선택 된 스케줄
   const [currentSchedule, setCurrentSchedule] = useState<Schedule | null>(
-    schedules.length ? schedules[0] : null
+    getCurrentSchedule(schedules)
   );
 
   useEffect(() => {
@@ -97,16 +112,15 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
     );
 
     setSchedules(dateSchedules);
-
-    if (dateSchedules.length) {
-      setCurrentSchedule(dateSchedules[0]);
-    } else {
-      setCurrentSchedule(null);
-    }
+    setCurrentSchedule(getCurrentSchedule(dateSchedules));
   }, [currentDate, weeklySchedules]);
 
   const moveWeek = (direction: "prev" | "next") => {
     setCurrentDate(currentDate.add(direction === "next" ? 7 : -7, "day"));
+  };
+
+  const endCountdownHandler = () => {
+    setCurrentSchedule(getCurrentSchedule(schedules, currentSchedule));
   };
 
   return (
@@ -184,7 +198,10 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
                   </span>
                 </time>
 
-                <Countdown targetDate={currentSchedule.dateTime} />
+                <Countdown
+                  targetDate={currentSchedule.dateTime}
+                  onEnd={endCountdownHandler}
+                />
               </div>
             </div>
 

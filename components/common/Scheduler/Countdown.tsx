@@ -23,7 +23,7 @@ const formatTime = ({ hours, minutes, seconds }: DdayCountdown): string =>
 
 const padTime = (time: number) => String(time).padStart(2, "0");
 
-const Countdown = ({ targetDate }: CountdownProps) => {
+const Countdown = ({ targetDate, onEnd }: CountdownProps) => {
   const [ddayCountdown, setDdayCountdown] = useState<DdayCountdown>({
     days: 0,
     hours: 0,
@@ -61,6 +61,11 @@ const Countdown = ({ targetDate }: CountdownProps) => {
 
         if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
           clearInterval(countdown);
+
+          setTimeout(() => {
+            onEnd();
+          }, 1000);
+
           return { days: 0, hours: 0, minutes: 0, seconds: 0, isEnd: true };
         }
 
@@ -69,7 +74,7 @@ const Countdown = ({ targetDate }: CountdownProps) => {
     }, 1000);
 
     return () => clearInterval(countdown);
-  }, [targetDate]);
+  }, [targetDate, onEnd]);
 
   return (
     <div className="float-end w-max rounded-full bg-slate-200 bg-opacity-70 px-2">

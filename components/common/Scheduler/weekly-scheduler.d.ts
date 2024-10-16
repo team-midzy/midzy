@@ -17,6 +17,7 @@ interface WeekInfo {
 
 interface CountdownProps {
   readonly targetDate: DateTimeString;
+  readonly onEnd: () => void;
 }
 
 interface DdayCountdown {
