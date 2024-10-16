@@ -112,7 +112,9 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
   return (
     <Card className={className}>
       <header className="flex items-center justify-between px-1">
-        <h6 className="font-bold">{`${weekInfo.month}월 ${weekInfo.week}주차`}</h6>
+        <h5 className="text-xl font-bold">
+          {`${weekInfo.month}월 ${weekInfo.week}주차`} 📅
+        </h5>
 
         <div className="flex items-center text-neutral-400">
           {!dayjs().isSame(currentDate, "date") && (
@@ -186,7 +188,9 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
               </div>
             </div>
 
-            <h5 className="py-2 text-lg">{currentSchedule.schedule}</h5>
+            <h5 className="py-2 text-lg font-semibold">
+              {currentSchedule.schedule}
+            </h5>
           </>
         ) : (
           <div className="h-36 w-full text-center leading-[9rem]">
@@ -210,11 +214,13 @@ const WeeklyScheduler = ({ className }: WeeklySchedulerProps) => {
               >
                 <time
                   dateTime={dateTime}
-                  className="w-[66px] rounded-full bg-primary-300 px-2 py-1 text-center text-xs"
+                  className="w-[66px] rounded-full bg-primary-400 px-2 py-1 text-center text-xs"
                 >
-                  <span>{dayjs(dateTime).format("hh:mm")}</span>
+                  <span className="text-white">
+                    {dayjs(dateTime).format("hh:mm")}
+                  </span>
 
-                  <span className="ml-0.5 text-[0.625rem] text-neutral-50">
+                  <span className="ml-0.5 text-[0.625rem]">
                     {dayjs(dateTime).format("A")}
                   </span>
                 </time>

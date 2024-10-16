@@ -75,12 +75,12 @@ const Countdown = ({ targetDate }: CountdownProps) => {
     <div className="float-end w-max rounded-full bg-slate-200 bg-opacity-70 px-2">
       <span
         aria-label={`D-Day ${ddayCountdown.days}`}
-        className="mx-1 text-xs leading-5 text-itzy-200"
+        className="mx-1 text-xs leading-5 text-itzy-500"
       >
         {`D-${ddayCountdown.days}`}
       </span>
 
-      <time className="inline-block min-w-[60px] text-sm text-neutral-400">
+      <time className="inline-block min-w-[60px] text-sm text-neutral-600">
         {formatTime(ddayCountdown)}
       </time>
     </div>
