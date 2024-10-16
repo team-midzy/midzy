@@ -1,7 +1,17 @@
 {
   "name": "midzy",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "license": "UNLICENSED",
+  "author": {
+    "name": "@GuessWhoITZY",
+    "email": "support@midzy.kr",
+    "url": "https://www.midzy.kr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/team-midzy/midzy.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
