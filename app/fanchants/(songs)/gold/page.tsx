@@ -48,9 +48,6 @@ const Gold = () => {
         <p>
           <Midzy>(함성)</Midzy>
         </p>
-
-        <br />
-
         <p>
           평온함을 rip 대혼란을 일으켜 <Midzy>(골!)</Midzy>
         </p>
@@ -59,48 +56,43 @@ const Gold = () => {
         </p>
         <p>Going to my head, going all out of control</p>
         <p>Cuz I shine so bright like dynamite GOLD</p>
-
-        <br />
-
         <p>
           <Midzy>있! 지! 믿! 지!</Midzy>
         </p>
         <p>
           <Midzy>(함성)</Midzy>
         </p>
-
-        <br />
-
         <p>
           Yeah <Chant>ITZY</Chant>
         </p>
-        <p>Yeah Ho</p>
 
         <br />
 
+        <p>쉴 새 없는 하루</p>
         <p>
-          쉴 새 없는 하루 <Chant>Wait a minute</Chant>
+          <Chant>Wait a minute</Chant>
         </p>
+        <p>문젠 없지</p>
         <p>
-          문젠 없지 <Chant>Wait a minute</Chant>
+          <Chant>Wait a minute</Chant>
         </p>
-        <p>좀 더 재밌는 걸 찾아갈 뿐이지 What</p>
-
-        <br />
-
+        <p>좀 더 재밌는 걸 찾아갈 뿐이지</p>
+        <p>What</p>
         <p>
           Just keep it going up <Chant>up up up up</Chant>
         </p>
         <p>그때 너를 발견한 거야</p>
+        <p>두 눈이 마주친 다음</p>
         <p>
-          두 눈이 마주친 다음 <Midzy>(hey~)</Midzy>
+          <Midzy>(hey~)</Midzy>
         </p>
 
         <br />
 
         <p>That thing that you do</p>
+        <p>That thing that you do 불현듯이 내맘이</p>
         <p>
-          That thing that you do 불현듯이 내맘이 <Midzy>(hey~)</Midzy>
+          <Midzy>(hey~)</Midzy>
         </p>
         <p>Yeah diamond in my heart 반쯤 홀린 듯</p>
         <p>
@@ -112,12 +104,8 @@ const Gold = () => {
         <p>
           <Midzy>(함성)</Midzy>
         </p>
-
-        <br />
-
-        <p>Always in my head</p>
         <p>
-          you a repeat of my <Chant>favorite song</Chant>
+          Always in my head you a repeat of my <Chant>favorite song</Chant>
         </p>
         <p>
           나의 머리엔 새로운 감정들이 <Chant>느껴져</Chant>
@@ -134,7 +122,9 @@ const Gold = () => {
         <p>
           <Chant>Day and night we beaming blazing just like that</Chant>
         </p>
-        <p>Day and night we beaming blazing just like that</p>
+        <p>
+          <Chant>Day and night we beaming blazing just like that</Chant>
+        </p>
 
         <br />
 
@@ -153,16 +143,17 @@ const Gold = () => {
 
         <p>Gold in the air, gold everywhere</p>
         <p>디딜 틈조차 없는 shadow 너라는 존재로</p>
-        <p>Hey 나는 이제 저 멀리 빛나는 별보다</p>
-        <p>
-          밝게 타오르게 돼 <Midzy>(hey~)</Midzy>
-        </p>
+        <p>Hey 나는 이제 저 멀리 빛나는 별보다 밝게 타오르게 돼</p>
 
         <br />
 
-        <p>What you want to do</p>
         <p>
-          What you want to do 조금 위험한 느낌 <Midzy>(hey~)</Midzy>
+          <Midzy>(hey~)</Midzy>
+        </p>
+        <p>What you want to do</p>
+        <p>What you want to do 조금 위험한 느낌</p>
+        <p>
+          <Midzy>(hey~)</Midzy>
         </p>
         <p>Yeah diamond in my heart 가빠지는 숨</p>
         <p>
@@ -174,12 +165,8 @@ const Gold = () => {
         <p>
           <Midzy>(함성)</Midzy>
         </p>
-
-        <br />
-
-        <p>Always in my head</p>
         <p>
-          you a repeat of my <Chant>favorite song</Chant>
+          Always in my head you a repeat of my <Chant>favorite song</Chant>
         </p>
         <p>
           나의 심장에 낯선 감정들이 <Chant>느껴져</Chant>
@@ -196,7 +183,9 @@ const Gold = () => {
         <p>
           <Chant>Day and night we beaming blazing just like that</Chant>
         </p>
-        <p>Day and night we beaming blazing just like that</p>
+        <p>
+          <Chant>Day and night we beaming blazing just like that</Chant>
+        </p>
 
         <br />
 
@@ -215,10 +204,7 @@ const Gold = () => {
           <Midzy>(황예지 최지수 신류진 이채령 신유나)</Midzy>
         </p>
         <p>
-          <Midzy>(영원히 빛나줘 Just like that)</Midzy>
-        </p>
-        <p>
-          <Midzy>(함성)</Midzy>
+          <Midzy>(영원히 빛나줘 Just like that) (함성)</Midzy>
         </p>
 
         <br />
@@ -242,14 +228,11 @@ const Gold = () => {
         </p>
         <p>눈을 감아봐도 glow</p>
         <p>
-          <Chant>Day and night we beaming blazing just like that</Chant>
+          Day and night we beaming blazing <Chant>just like that</Chant>
         </p>
         <p>
           Head to toe we&apos;re G-O-L-D <Chant>gold</Chant>
         </p>
-
-        <br />
-
         <p>
           <Midzy>(함성)</Midzy>
         </p>
