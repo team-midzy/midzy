@@ -38,14 +38,14 @@ const Supports = () => {
             </div>
 
             <div>
-              <h6 className="font-semibold">모금 기간</h6>
+              <h6 className="font-semibold">진행 기간</h6>
               <p className="text-neutral-800">
-                2024.10.13(일) - 2024.10.19(토)
+                2024.10.13(일) - 2024.11.02(토)
               </p>
             </div>
 
             <div>
-              <h6 className="font-semibold">모금 목표액(초안)</h6>
+              <h6 className="font-semibold">모금 목표액 (달성완료)</h6>
               <p className="text-neutral-800">1,000,000 원</p>
             </div>
 

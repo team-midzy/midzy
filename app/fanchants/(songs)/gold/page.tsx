@@ -228,7 +228,7 @@ const Gold = () => {
         </p>
         <p>눈을 감아봐도 glow</p>
         <p>
-          Day and night we beaming blazing <Chant>just like that</Chant>
+          <Chant>Day and night we beaming blazing just like that</Chant>
         </p>
         <p>
           Head to toe we&apos;re G-O-L-D <Chant>gold</Chant>
