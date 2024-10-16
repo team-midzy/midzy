@@ -42,19 +42,25 @@
     "schedule": "셀폰KODE"
   },
   {
-    "id": 14,
+    "id": 15,
     "dateTime": "2024-10-17 18:00",
     "member": "itzy",
     "schedule": "M Countdown"
   },
   {
-    "id": 15,
+    "id": 18,
+    "dateTime": "2024-10-17 18:00",
+    "member": "itzy",
+    "schedule": "재친구"
+  },
+  {
+    "id": 16,
     "dateTime": "2024-10-18 17:05",
     "member": "itzy",
     "schedule": "뮤직뱅크"
   },
   {
-    "id": 16,
+    "id": 17,
     "dateTime": "2024-10-19 15:15",
     "member": "itzy",
     "schedule": "쇼! 음악중심"
@@ -70,6 +76,12 @@
     "dateTime": "2024-10-23 00:00",
     "member": "itzy",
     "schedule": "G-SHOCK x ITZY 콜라보 출시 기념 하이터치 & 팬사인회 이벤트"
+  },
+  {
+    "id": 19,
+    "dateTime": "2024-10-23 00:00",
+    "member": "itzy",
+    "schedule": "쓔요일에 만나"
   },
   {
     "id": 3,
