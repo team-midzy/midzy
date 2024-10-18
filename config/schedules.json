@@ -73,9 +73,15 @@
   },
   {
     "id": 21,
-    "dateTime": "2024-10-18 12:00",
+    "dateTime": "2024-10-19 12:00",
     "member": "ryujin",
     "schedule": "순간뽀짝 세상에 이런 아이돌이"
+  },
+  {
+    "id": 21,
+    "dateTime": "2024-10-19 19:00",
+    "member": "itzy",
+    "schedule": "아이돌 인간극장"
   },
   {
     "id": 2,
