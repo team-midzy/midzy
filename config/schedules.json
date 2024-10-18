@@ -72,6 +72,12 @@
     "schedule": "쇼! 음악중심 (스페셜 MC 예지)"
   },
   {
+    "id": 21,
+    "dateTime": "2024-10-18 12:00",
+    "member": "ryujin",
+    "schedule": "순간뽀짝 세상에 이런 아이돌이"
+  },
+  {
     "id": 2,
     "dateTime": "2024-10-23 00:00",
     "member": "itzy",
@@ -88,6 +94,12 @@
     "dateTime": "2024-10-23 00:00",
     "member": "itzy",
     "schedule": "쓔요일에 만나"
+  },
+  {
+    "id": 22,
+    "dateTime": "2024-10-24 11:00",
+    "member": "itzy",
+    "schedule": "박명수의 라디오쇼"
   },
   {
     "id": 3,
