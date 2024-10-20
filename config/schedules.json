@@ -84,6 +84,24 @@
     "schedule": "아이돌 인간극장"
   },
   {
+    "id": 25,
+    "dateTime": "2024-10-20 15:20",
+    "member": "itzy",
+    "schedule": "인기가요 라이브 인 도쿄 (스페셜 MC 유나)"
+  },
+  {
+    "id": 24,
+    "dateTime": "2024-10-20 22:00",
+    "member": "itzy",
+    "schedule": "LeoJ Makeup"
+  },
+  {
+    "id": 26,
+    "dateTime": "2024-10-22 12:00",
+    "member": "itzy",
+    "schedule": "정오의 희망곡"
+  },
+  {
     "id": 2,
     "dateTime": "2024-10-23 00:00",
     "member": "itzy",
@@ -108,6 +126,12 @@
     "schedule": "박명수의 라디오쇼"
   },
   {
+    "id": 27,
+    "dateTime": "2024-10-24 18:00",
+    "member": "itzy",
+    "schedule": "M Countdown"
+  },
+  {
     "id": 3,
     "dateTime": "2024-10-25 00:00",
     "member": "itzy",
@@ -126,10 +150,22 @@
     "schedule": "뮤직뱅크 in 창원"
   },
   {
+    "id": 28,
+    "dateTime": "2024-10-26 15:15",
+    "member": "itzy",
+    "schedule": "쇼! 음악중심"
+  },
+  {
     "id": 4,
     "dateTime": "2024-10-27 00:00",
     "member": "itzy",
     "schedule": "Imaginary Friend Photo"
+  },
+  {
+    "id": 29,
+    "dateTime": "2024-10-27 15:20",
+    "member": "itzy",
+    "schedule": "인기가요"
   },
   {
     "id": 5,
