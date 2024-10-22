@@ -91,7 +91,7 @@
   },
   {
     "id": 24,
-    "dateTime": "2024-10-20 22:00",
+    "dateTime": "2024-10-20 21:00",
     "member": "itzy",
     "schedule": "LeoJ Makeup"
   },
@@ -172,6 +172,12 @@
     "dateTime": "2024-10-28 00:00",
     "member": "itzy",
     "schedule": "Imaginary Friend M/V 공개"
+  },
+  {
+    "id": 30,
+    "dateTime": "2024-10-29 21:00",
+    "member": "chaeryeong",
+    "schedule": "지구를 닦는 남자들"
   },
   {
     "id": 6,
