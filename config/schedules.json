@@ -132,6 +132,18 @@
     "schedule": "M Countdown"
   },
   {
+    "id": 32,
+    "dateTime": "2024-10-24 21:00",
+    "member": "itzy",
+    "schedule": "와!진짜? 세상에 이런일이 (류진, 유나)"
+  },
+  {
+    "id": 35,
+    "dateTime": "2024-10-24 21:00",
+    "member": "lia",
+    "schedule": "돌체앤가바나 포토콜"
+  },
+  {
     "id": 3,
     "dateTime": "2024-10-25 00:00",
     "member": "itzy",
@@ -142,6 +154,12 @@
     "dateTime": "2024-10-25 10:30",
     "member": "itzy",
     "schedule": "\"믿지의 세포들\" POP-UP STORE OPEN"
+  },
+  {
+    "id": 31,
+    "dateTime": "2024-10-25 19:00",
+    "member": "ryujin",
+    "schedule": "차린건 쥐뿔도 없지만"
   },
   {
     "id": 10,
@@ -178,6 +196,18 @@
     "dateTime": "2024-10-29 21:00",
     "member": "chaeryeong",
     "schedule": "지구를 닦는 남자들"
+  },
+  {
+    "id": 34,
+    "dateTime": "2024-10-30 07:00",
+    "member": "itzy",
+    "schedule": "김영철의 파워FM"
+  },
+  {
+    "id": 33,
+    "dateTime": "2024-10-31 21:00",
+    "member": "itzy",
+    "schedule": "와!진짜? 세상에 이런일이 (류진, 유나)"
   },
   {
     "id": 6,
